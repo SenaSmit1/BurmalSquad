@@ -18,6 +18,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 635456942984004
+		},
+		{
+			"name": "Coins",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 269603950842543
+		},
+		{
+			"name": "ShotSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 562502131598206
 		}
 	],
 	"behaviorTypes": [

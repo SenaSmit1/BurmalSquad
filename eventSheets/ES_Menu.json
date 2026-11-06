@@ -5,9 +5,75 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 298068518673734
+				}
+			],
+			"actions": [
+				{
+					"id": "request-project-file",
+					"objectClass": "GameLoader",
+					"sid": 666231506896398,
+					"parameters": {
+						"tag": "\"gameData\"",
+						"file": {
+							"path": "GameData.json"
+						}
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "StartBtn",
+					"sid": 511884199968182,
+					"parameters": {
+						"instance-variable": "CanGo",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 782879169835847
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "GameLoader",
+					"sid": 669982537811557,
+					"parameters": {
+						"tag": "\"gameData\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "GameData",
+					"sid": 682010560082652,
+					"parameters": {
+						"data": "GameLoader.LastData"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "StartBtn",
+					"sid": 726842254268822,
+					"parameters": {
+						"instance-variable": "CanGo",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 352159748018280
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-touched-object",
 					"objectClass": "Touch",
-					"sid": 318265613045512,
+					"sid": 716962116177157,
 					"parameters": {
 						"object": "StartBtn",
 						"type": "start"
@@ -18,13 +84,32 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 861940298380005,
+					"sid": 118715873221611,
 					"parameters": {
 						"layout": "Arena"
 					}
 				}
 			],
-			"sid": 718967115553321
+			"sid": 400647527748481,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 665100937358824,
+							"parameters": {
+								"first-value": "StartBtn.CanGo",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 102524641894819
+				}
+			]
 		}
 	],
 	"sid": 941710272311924

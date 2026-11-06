@@ -2,6 +2,16 @@
 	"name": "Event sheet 1",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "CurrentWave",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 167943412484617
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -18,6 +28,14 @@
 					"parameters": {
 						"x": "LayoutWidth/2",
 						"y": "LayoutHeight/2"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 162530735184083,
+					"parameters": {
+						"time-scale": "1.0"
 					}
 				},
 				{
@@ -50,6 +68,50 @@
 					"sid": 636616612932640,
 					"parameters": {
 						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "SpawnManager",
+					"sid": 462028203693969,
+					"parameters": {
+						"instance-variable": "EnemiesToSpawn",
+						"value": "GameData.Get(\"waves.\" & CurrentWave & \".enemies.0.count\")"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "SpawnManager",
+					"sid": 502860357898456,
+					"parameters": {
+						"instance-variable": "spawnInterval",
+						"value": "GameData.Get(\"waves.\" & CurrentWave & \".spawnInterval\")"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Enemy1",
+					"sid": 845032337744633,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "GameData.Get(\"waves.\" & CurrentWave & \".enemies.stats.speed\")"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 307720207925336,
+					"parameters": {
+						"instance-variable": "ShotSpeed",
+						"value": "GameData.Get(\"waves.\" & CurrentWave & \".shotInterval\")"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text",
+					"sid": 765970298600622,
+					"parameters": {
+						"text": "GameData.Get(\"waves.\" & CurrentWave & \".id\") & \" волна\""
 					}
 				}
 			],
@@ -88,6 +150,14 @@
 					"sid": 220918799545269,
 					"parameters": {
 						"width": "Player.KilledEnemies*(WaweLineBack.Width/SpawnManager.EnemiesToSpawn)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text2",
+					"sid": 353710039954194,
+					"parameters": {
+						"text": "Player.Coins"
 					}
 				}
 			],
@@ -132,9 +202,9 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 542765082381731,
+					"sid": 377316066046906,
 					"parameters": {
-						"interval-seconds": "1.1"
+						"interval-seconds": "1.2"
 					}
 				},
 				{
@@ -152,11 +222,11 @@
 				{
 					"id": "compare-two-values",
 					"objectClass": "System",
-					"sid": 383146090910224,
+					"sid": 665848952782326,
 					"parameters": {
 						"first-value": "distance(Player.X, Player.Y, enemy1.X, enemy1.Y)",
 						"comparison": 3,
-						"second-value": "600"
+						"second-value": "700"
 					}
 				}
 			],
@@ -241,6 +311,19 @@
 			],
 			"actions": [
 				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 365289136369984,
+					"parameters": {
+						"object-to-create": "Coin",
+						"layer": "0",
+						"x": "Enemy1.X",
+						"y": "Enemy1.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
 					"id": "destroy",
 					"objectClass": "Enemy1",
 					"sid": 125057554671131
@@ -264,6 +347,15 @@
 			],
 			"actions": [
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 978055096824186,
+					"parameters": {
+						"variable": "CurrentWave",
+						"value": "0"
+					}
+				},
+				{
 					"id": "go-to-layout",
 					"objectClass": "System",
 					"sid": 607287244724567,
@@ -280,9 +372,9 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 601815702643031,
+					"sid": 800715063231868,
 					"parameters": {
-						"interval-seconds": "1.0"
+						"interval-seconds": "1.2"
 					}
 				},
 				{
@@ -354,11 +446,11 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 822255018188779,
+									"sid": 140772810776674,
 									"parameters": {
 										"first-value": "SpawnManager.NextSide",
 										"comparison": 0,
-										"second-value": "4"
+										"second-value": "12"
 									}
 								}
 							],
@@ -376,12 +468,6 @@
 							"sid": 439456164263178
 						}
 					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [],
-					"sid": 531771921240231
 				}
 			]
 		},
@@ -401,11 +487,34 @@
 			],
 			"actions": [
 				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 468192077301400,
+					"parameters": {
+						"variable": "CurrentWave",
+						"value": "1"
+					}
+				},
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Player",
+					"sid": 225633210709776,
+					"parameters": {
+						"instance-variable": "Coins",
+						"value": "Coin.Count"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Coin",
+					"sid": 999042183467360
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 891182492447206,
+					"sid": 131600471007378,
 					"parameters": {
-						"seconds": "1.0",
+						"seconds": "2.0",
 						"use-timescale": true
 					}
 				},
@@ -484,6 +593,36 @@
 				}
 			],
 			"sid": 779922105571712
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 858352749579514,
+					"parameters": {
+						"object": "Coin"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Player",
+					"sid": 319343273537843,
+					"parameters": {
+						"instance-variable": "Coins",
+						"value": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Coin",
+					"sid": 318078689272617
+				}
+			],
+			"sid": 967054825275112
 		}
 	],
 	"sid": 411087049602231

@@ -1,0 +1,46 @@
+{
+    "waves": [
+        {
+            "id": 1,
+            "shotInterval": 1.5,
+            "spawnInterval": 1,
+            "enemies": [
+                {
+                    "type": "mob1",
+                    "count": 5,
+                    "stats": {
+                        "speed": 150
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "shotInterval": 0.5,
+            "spawnInterval": 0.8,
+            "enemies": [
+                {
+                    "type": "mob1",
+                    "count": 30,
+                    "stats": {
+                        "speed": 300
+                    }
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "shotInterval": 0.4,
+            "spawnInterval": 0.6,
+            "enemies": [
+                {
+                    "type": "mob1",
+                    "count": 60,
+                    "stats": {
+                        "speed": 200
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -8,8 +8,22 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Button",
 			"name": "Button",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -93,7 +107,11 @@
 			"Arena",
 			"WaveLine",
 			"MenuBg",
-			"StartBtn"
+			"StartBtn",
+			"Coin",
+			"Text2",
+			"GameLoader",
+			"GameData"
 		],
 		"subfolders": []
 	},
@@ -201,7 +219,16 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "GameData.json",
+					"type": "application/json",
+					"sid": 793539839014184,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},

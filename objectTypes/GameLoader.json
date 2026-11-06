@@ -1,0 +1,12 @@
+{
+	"name": "GameLoader",
+	"plugin-id": "AJAX",
+	"sid": 826087253377939,
+	"singleglobal-inst": {
+		"type": "GameLoader",
+		"properties": {},
+		"uid": 44,
+		"sid": 945462509635655,
+		"tags": ""
+	}
+}

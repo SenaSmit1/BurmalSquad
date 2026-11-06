@@ -52,14 +52,16 @@
 					"uid": 32,
 					"sid": 333920116761888,
 					"tags": "",
-					"instanceVariables": {},
+					"instanceVariables": {
+						"CanGo": 0
+					},
 					"behaviors": {},
 					"materialSurfaceType": "smooth",
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1028.0024685897583,
-						"y": 739.3154487562165,
+						"x": 960,
+						"y": 763,
 						"width": 456.18589485496744,
 						"height": 144.8902879016146,
 						"originX": 0.5,

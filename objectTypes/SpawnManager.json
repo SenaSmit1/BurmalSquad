@@ -25,6 +25,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 921438224853852
+		},
+		{
+			"name": "spawnInterval",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 564491524244533
 		}
 	],
 	"behaviorTypes": [],
