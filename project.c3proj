@@ -111,7 +111,9 @@
 			"Coin",
 			"Text2",
 			"GameLoader",
-			"GameData"
+			"GameData",
+			"NextWaveButton",
+			"NexWaveText"
 		],
 		"subfolders": []
 	},

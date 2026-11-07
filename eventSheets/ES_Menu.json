@@ -80,16 +80,7 @@
 					}
 				}
 			],
-			"actions": [
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 118715873221611,
-					"parameters": {
-						"layout": "Arena"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 400647527748481,
 			"children": [
 				{
@@ -106,7 +97,16 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 302477750101476,
+							"parameters": {
+								"layout": "Arena"
+							}
+						}
+					],
 					"sid": 102524641894819
 				}
 			]
