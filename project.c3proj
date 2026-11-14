@@ -124,7 +124,10 @@
 			"SettingsBtn",
 			"Sprite",
 			"ShopSlot",
-			"BuyButton"
+			"BuyButton",
+			"Sputnik",
+			"sputnikBullet",
+			"Price"
 		],
 		"subfolders": []
 	},

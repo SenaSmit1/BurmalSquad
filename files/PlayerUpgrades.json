@@ -10,5 +10,17 @@
             "name": "Ускорение стрельбы!",
             "shootInterval": 0.9
         }
+    ],
+    "shop":[
+        {
+            "items": [
+                {
+                    "name": "Спутник базовый",
+                    "animationFrame": 1,
+                    "price": 10
+
+                }
+            ]
+        }
     ]
 }

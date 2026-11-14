@@ -11,6 +11,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 357274847989936
+		},
+		{
+			"name": "Targeted",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 543265456792721
 		}
 	],
 	"behaviorTypes": [

@@ -1,0 +1,64 @@
+{
+	"name": "sputnikBullet",
+	"plugin-id": "Sprite",
+	"sid": 448072138318551,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 253512093137625
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 85,
+						"height": 84,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6915326,
+						"collisionPoly": {
+							"points": [
+								0.5176470588235295,
+								0,
+								1,
+								0.47619047619047616,
+								1,
+								0.5238095238095238,
+								0.5294117647058824,
+								1,
+								0.4823529411764706,
+								1,
+								0.011764705882352941,
+								0.5238095238095238,
+								0.011764705882352941,
+								0.47619047619047616
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 779907201159819,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

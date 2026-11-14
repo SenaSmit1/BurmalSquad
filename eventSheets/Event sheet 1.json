@@ -42,6 +42,16 @@
 			"sid": 804768505547415
 		},
 		{
+			"eventType": "variable",
+			"name": "IsSputnik",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 810873425665598
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -127,9 +137,72 @@
 					"parameters": {
 						"text": "\"Волна \" & GameData.Get(\"waves.\" & CurrentWave & \".id\")"
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "BuyButton",
+					"sid": 479269680235637,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ShopSlot",
+					"sid": 898727674635221,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Sputnik",
+					"sid": 507386136767884,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Price",
+					"sid": 693652874135963,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 657768115449599
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 368285185857677
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 461322514396234,
+					"parameters": {
+						"variable": "IsSputnik",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Sputnik",
+					"sid": 420766786774293,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 899101507390239
 		},
 		{
 			"eventType": "block",
@@ -172,6 +245,15 @@
 					"sid": 811094206004933,
 					"parameters": {
 						"text": "GlobalCoins"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Sputnik",
+					"sid": 718949365257242,
+					"parameters": {
+						"x": "Player.X - 52",
+						"y": "Player.Y + 22"
 					}
 				}
 			],
@@ -296,9 +378,93 @@
 					"parameters": {
 						"angle": "angle(bullet.X, bullet.Y, enemy1.X, enemy1.Y)"
 					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Enemy1",
+					"sid": 691842436788228,
+					"parameters": {
+						"instance-variable": "Targeted",
+						"value": "true"
+					}
 				}
 			],
 			"sid": 457403637287400
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 494235529099444,
+					"parameters": {
+						"interval-seconds": "Sputnik.ShotSpeed"
+					}
+				},
+				{
+					"id": "pick-nearestfurthest",
+					"objectClass": "Enemy1",
+					"sid": 544365596495958,
+					"parameters": {
+						"which": "nearest",
+						"x": "Player.X",
+						"y": "Player.Y",
+						"z": "0",
+						"pick-all-tied": false
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 736338927438386,
+					"parameters": {
+						"first-value": "distance(Player.X, Player.Y, enemy1.X, enemy1.Y)",
+						"comparison": 3,
+						"second-value": "700"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 697471492709798,
+					"parameters": {
+						"first-value": "Enemy1.Targeted",
+						"comparison": 0,
+						"second-value": "0"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "Sputnik",
+					"sid": 275907934351404
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 627618657204994,
+					"parameters": {
+						"object-to-create": "sputnikBullet",
+						"layer": "0",
+						"x": "Sputnik.X",
+						"y": "Sputnik.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "sputnikBullet",
+					"sid": 655438699438316,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "angle(SputnikBullet.X, SputnikBullet.Y, enemy1.X, enemy1.Y)"
+					}
+				}
+			],
+			"sid": 858260842177471
 		},
 		{
 			"eventType": "block",
@@ -338,6 +504,45 @@
 				}
 			],
 			"sid": 382513007874459
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "sputnikBullet",
+					"sid": 767980050927605,
+					"parameters": {
+						"object": "Enemy1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Enemy1",
+					"sid": 492330415238475,
+					"parameters": {
+						"instance-variable": "HP",
+						"value": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "sputnikBullet",
+					"sid": 946084282193688
+				},
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Player",
+					"sid": 652595813727441,
+					"parameters": {
+						"instance-variable": "KilledEnemies",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 655976538577188
 		},
 		{
 			"eventType": "block",
@@ -643,9 +848,41 @@
 					],
 					"actions": [
 						{
+							"id": "set-animation-frame",
+							"objectClass": "BuyButton",
+							"sid": 276910698623559,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
 							"id": "set-visible",
 							"objectClass": "NextWaveButton",
 							"sid": 280987039105002,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "BuyButton",
+							"sid": 349127375973743,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Price",
+							"sid": 384147929454255,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ShopSlot",
+							"sid": 113647254790249,
 							"parameters": {
 								"visibility": "visible"
 							}
@@ -656,6 +893,31 @@
 							"sid": 117287546228961,
 							"parameters": {
 								"time-scale": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "BuyButton",
+							"sid": 702595880096274,
+							"parameters": {
+								"instance-variable": "price",
+								"value": "PlayerData.Get(\"shop.\" & CurrentWave -1 & \".items.0.price\")"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "ShopSlot",
+							"sid": 592475969646345,
+							"parameters": {
+								"frame-number": "PlayerData.Get(\"shop.\" & CurrentWave - 1 & \".items.0.animationFrame\")"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Price",
+							"sid": 707945213477505,
+							"parameters": {
+								"text": "BuyButton.price"
 							}
 						}
 					],
@@ -712,6 +974,66 @@
 					"sid": 356629196065774
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 459525224429734,
+					"parameters": {
+						"object": "BuyButton"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 645740571835737,
+					"parameters": {
+						"first-value": "GlobalCoins",
+						"comparison": 5,
+						"second-value": "BuyButton.price"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 490788993536609,
+					"parameters": {
+						"variable": "GlobalCoins",
+						"value": "BuyButton.price"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 379211217093200,
+					"parameters": {
+						"variable": "IsSputnik",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "BuyButton",
+					"sid": 219433104379180,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Price",
+					"sid": 245098754093052,
+					"parameters": {
+						"text": "\"Куплено\""
+					}
+				}
+			],
+			"sid": 553087253467088
 		},
 		{
 			"eventType": "block",
