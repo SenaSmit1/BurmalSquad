@@ -1144,7 +1144,7 @@
 						"x": 1842,
 						"y": 1952,
 						"width": 41.684431757383194,
-						"height": 53.68449544511472,
+						"height": 53.68449544511471,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1601,8 +1601,26 @@
 					"behaviors": {},
 					"materialSurfaceType": "smooth",
 					"sceneGraphData": {
-						"parent-uid": 46,
+						"parent-uid": null,
 						"uid": 14,
+						"children": [
+							{
+								"uid": 28,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"de": true,
+									"a": true,
+									"o": false,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
 						"flags": {
 							"x": true,
 							"y": true,
@@ -1612,7 +1630,7 @@
 							"de": true,
 							"a": true,
 							"o": false,
-							"v": true,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -1666,7 +1684,7 @@
 					"behaviors": {},
 					"materialSurfaceType": "smooth",
 					"sceneGraphData": {
-						"parent-uid": 46,
+						"parent-uid": 14,
 						"uid": 28,
 						"flags": {
 							"x": true,
@@ -1952,7 +1970,7 @@
 						"uid": 46,
 						"children": [
 							{
-								"uid": 14,
+								"uid": 54,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -1968,7 +1986,23 @@
 								}
 							},
 							{
-								"uid": 28,
+								"uid": 47,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"de": true,
+									"a": true,
+									"o": false,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 56,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -2152,6 +2186,37 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"materialSurfaceType": "smooth",
+					"sceneGraphData": {
+						"parent-uid": 46,
+						"uid": 54,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"de": true,
+							"a": true,
+							"o": false,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZ": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformD": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformSZ": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -2189,6 +2254,37 @@
 					},
 					"behaviors": {},
 					"materialSurfaceType": "smooth",
+					"sceneGraphData": {
+						"parent-uid": 46,
+						"uid": 56,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"de": true,
+							"a": true,
+							"o": false,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZ": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformD": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformSZ": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -2239,6 +2335,37 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"materialSurfaceType": "smooth",
+					"sceneGraphData": {
+						"parent-uid": 46,
+						"uid": 47,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"de": true,
+							"a": true,
+							"o": false,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZ": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformD": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformSZ": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
 					"showing": true,
 					"locked": false,
 					"world": {

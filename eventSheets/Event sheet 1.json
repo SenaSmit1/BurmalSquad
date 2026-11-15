@@ -140,22 +140,6 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "BuyButton",
-					"sid": 479269680235637,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "ShopSlot",
-					"sid": 898727674635221,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-visible",
 					"objectClass": "Sputnik",
 					"sid": 507386136767884,
 					"parameters": {
@@ -164,8 +148,16 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "Price",
-					"sid": 693652874135963,
+					"objectClass": "ResultBg",
+					"sid": 116270216456026,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "NextWaveButton",
+					"sid": 290697053116423,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -601,6 +593,14 @@
 			],
 			"actions": [
 				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 954937931081459,
+					"parameters": {
+						"time-scale": "0"
+					}
+				},
+				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
 					"sid": 978055096824186,
@@ -624,22 +624,6 @@
 					"sid": 835966186269027,
 					"parameters": {
 						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "ToMenuButton",
-					"sid": 916200889446228,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-time-scale",
-					"objectClass": "System",
-					"sid": 193341302644823,
-					"parameters": {
-						"time-scale": "0"
 					}
 				}
 			],
@@ -857,32 +841,16 @@
 						},
 						{
 							"id": "set-visible",
+							"objectClass": "ResultBg",
+							"sid": 803195865938477,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
 							"objectClass": "NextWaveButton",
-							"sid": 280987039105002,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "BuyButton",
-							"sid": 349127375973743,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "Price",
-							"sid": 384147929454255,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "ShopSlot",
-							"sid": 113647254790249,
+							"sid": 253515661344189,
 							"parameters": {
 								"visibility": "visible"
 							}
