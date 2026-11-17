@@ -1,0 +1,66 @@
+{
+	"name": "SputnikZhuzhik",
+	"plugin-id": "Sprite",
+	"sid": 526912789604250,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 102,
+						"height": 137,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3518055,
+						"collisionPoly": {
+							"points": [
+								0.23529411764705882,
+								0,
+								0.7156862745098039,
+								0,
+								0.7549019607843137,
+								0.014598540145985401,
+								0.803921568627451,
+								0.051094890510948905,
+								0.9803921568627451,
+								0.35036496350364965,
+								1,
+								0.39416058394160586,
+								0.9803921568627451,
+								0.927007299270073,
+								0.8823529411764706,
+								0.948905109489051,
+								0.00980392156862745,
+								0.9781021897810219,
+								0,
+								0.39416058394160586,
+								0.17647058823529413,
+								0.021897810218978103
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 520847684045434,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

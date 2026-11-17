@@ -18,6 +18,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 545413570766228
+		},
+		{
+			"name": "itemId",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 154484036774192
 		}
 	],
 	"behaviorTypes": [],

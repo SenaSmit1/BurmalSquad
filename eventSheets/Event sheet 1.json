@@ -15,7 +15,7 @@
 			"eventType": "variable",
 			"name": "GlobalCoins",
 			"type": "number",
-			"initialValue": "0",
+			"initialValue": "1000",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -40,16 +40,6 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 804768505547415
-		},
-		{
-			"eventType": "variable",
-			"name": "IsSputnik",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 810873425665598
 		},
 		{
 			"eventType": "block",
@@ -140,14 +130,6 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "Sputnik",
-					"sid": 507386136767884,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-visible",
 					"objectClass": "ResultBg",
 					"sid": 116270216456026,
 					"parameters": {
@@ -161,6 +143,14 @@
 					"parameters": {
 						"visibility": "invisible"
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "SputnikZhuzhik",
+					"sid": 831501532883109,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 657768115449599
@@ -171,30 +161,30 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 368285185857677
+					"sid": 860597761536094
 				},
 				{
-					"id": "compare-eventvar",
+					"id": "compare-two-values",
 					"objectClass": "System",
-					"sid": 461322514396234,
+					"sid": 938014253899073,
 					"parameters": {
-						"variable": "IsSputnik",
+						"first-value": "RunData.Get(\"zhuzhik\")",
 						"comparison": 0,
-						"value": "1"
+						"second-value": "1"
 					}
 				}
 			],
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "Sputnik",
-					"sid": 420766786774293,
+					"objectClass": "SputnikZhuzhik",
+					"sid": 239237645483719,
 					"parameters": {
 						"visibility": "visible"
 					}
 				}
 			],
-			"sid": 899101507390239
+			"sid": 282341540265460
 		},
 		{
 			"eventType": "block",
@@ -240,12 +230,19 @@
 					}
 				},
 				{
-					"id": "set-position",
-					"objectClass": "Sputnik",
-					"sid": 718949365257242,
+					"id": "set-x",
+					"objectClass": "SputnikZhuzhik",
+					"sid": 829880755197369,
 					"parameters": {
-						"x": "Player.X - 52",
-						"y": "Player.Y + 22"
+						"x": "lerp(SputnikZhuzhik.X, Player.X + 40, 0.05)"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "SputnikZhuzhik",
+					"sid": 917653212573303,
+					"parameters": {
+						"y": "lerp(SputnikZhuzhik.Y, Player.Y + 40, 0.05)"
 					}
 				}
 			],
@@ -389,9 +386,9 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 494235529099444,
+					"sid": 838273377055665,
 					"parameters": {
-						"interval-seconds": "Sputnik.ShotSpeed"
+						"interval-seconds": "2"
 					}
 				},
 				{
@@ -425,23 +422,18 @@
 						"comparison": 0,
 						"second-value": "0"
 					}
-				},
-				{
-					"id": "is-visible",
-					"objectClass": "Sputnik",
-					"sid": 275907934351404
 				}
 			],
 			"actions": [
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 627618657204994,
+					"sid": 555949299921988,
 					"parameters": {
 						"object-to-create": "sputnikBullet",
 						"layer": "0",
-						"x": "Sputnik.X",
-						"y": "Sputnik.Y",
+						"x": "SputnikZhuzhik.X",
+						"y": "SputnikZhuzhik.Y",
 						"create-hierarchy": false,
 						"template-name": "\"\""
 					}
@@ -624,6 +616,15 @@
 					"sid": 835966186269027,
 					"parameters": {
 						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 907461408126511,
+					"parameters": {
+						"variable": "Initialize",
+						"value": "0"
 					}
 				}
 			],
@@ -832,6 +833,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-instvar-value",
+							"objectClass": "ShopManager",
+							"sid": 743624943134988,
+							"parameters": {
+								"instance-variable": "CompanionIndex",
+								"value": "floor(random(3))"
+							}
+						},
+						{
 							"id": "set-animation-frame",
 							"objectClass": "BuyButton",
 							"sid": 276910698623559,
@@ -866,18 +876,18 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "BuyButton",
-							"sid": 702595880096274,
+							"sid": 679821974670308,
 							"parameters": {
 								"instance-variable": "price",
-								"value": "PlayerData.Get(\"shop.\" & CurrentWave -1 & \".items.0.price\")"
+								"value": "GameData.Get(\"sputniki.\" & ShopManager.CompanionIndex & \".price\")"
 							}
 						},
 						{
 							"id": "set-animation-frame",
 							"objectClass": "ShopSlot",
-							"sid": 592475969646345,
+							"sid": 335021940812427,
 							"parameters": {
-								"frame-number": "PlayerData.Get(\"shop.\" & CurrentWave - 1 & \".items.0.animationFrame\")"
+								"frame-number": "GameData.Get(\"sputniki.\" & ShopManager.CompanionIndex & \".iconFrame\")"
 							}
 						},
 						{
@@ -886,6 +896,15 @@
 							"sid": 707945213477505,
 							"parameters": {
 								"text": "BuyButton.price"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "BuyButton",
+							"sid": 440844511191376,
+							"parameters": {
+								"instance-variable": "itemId",
+								"value": "GameData.Get(\"sputniki.\" & ShopManager.CompanionIndex & \".id\")"
 							}
 						}
 					],
@@ -963,6 +982,20 @@
 						"comparison": 5,
 						"second-value": "BuyButton.price"
 					}
+				},
+				{
+					"id": "compare-animation-frame",
+					"objectClass": "BuyButton",
+					"sid": 173035240621565,
+					"parameters": {
+						"comparison": 0,
+						"number": "0"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "BuyButton",
+					"sid": 381028109050891
 				}
 			],
 			"actions": [
@@ -973,15 +1006,6 @@
 					"parameters": {
 						"variable": "GlobalCoins",
 						"value": "BuyButton.price"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 379211217093200,
-					"parameters": {
-						"variable": "IsSputnik",
-						"value": "1"
 					}
 				},
 				{
@@ -998,6 +1022,15 @@
 					"sid": 245098754093052,
 					"parameters": {
 						"text": "\"Куплено\""
+					}
+				},
+				{
+					"id": "set-key",
+					"objectClass": "RunData",
+					"sid": 766399261301321,
+					"parameters": {
+						"key": "BuyButton.itemId",
+						"value": "1"
 					}
 				}
 			],
@@ -1157,6 +1190,106 @@
 				}
 			],
 			"sid": 625332848304726
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 969564964891613,
+					"parameters": {
+						"key": 87
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 136790254128674,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "up"
+					}
+				}
+			],
+			"sid": 102341509538656
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 359999602882207,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 877789809726762,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "down"
+					}
+				}
+			],
+			"sid": 538939658585750
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 950331113751040,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 113702222375179,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 321547468628449
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 300357215290938,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 649680784815459,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 374815832935208
 		}
 	],
 	"sid": 411087049602231

@@ -2,6 +2,16 @@
 	"name": "ES_Menu",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "Initialize",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 261946358784910
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -185,6 +195,65 @@
 					"sid": 102524641894819
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 664353626671700
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 662962472177741,
+					"parameters": {
+						"variable": "Initialize",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-key",
+					"objectClass": "RunData",
+					"sid": 303102522447731,
+					"parameters": {
+						"key": "\"zhuzhik\"",
+						"value": "0"
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "RunData",
+					"sid": 604340749912562,
+					"parameters": {
+						"key": "\"zaika\"",
+						"value": "0"
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "RunData",
+					"sid": 321611568396679,
+					"parameters": {
+						"key": "\"tomato\"",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 777162742366721,
+					"parameters": {
+						"variable": "Initialize",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 712396001989223
 		}
 	],
 	"sid": 941710272311924
