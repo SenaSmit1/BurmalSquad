@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 50603,
+	"savedWithRelease": 50604,
 	"name": "Burmal Squad",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -22,8 +22,29 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Словарь",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Json",
 			"name": "JSON",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Клавиатура",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Мышь",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -122,12 +143,18 @@
 			"IntroText",
 			"PlayerData",
 			"SettingsBtn",
-			"Sprite",
+			"ExitBtn",
 			"ShopSlot",
 			"BuyButton",
-			"Sputnik",
 			"sputnikBullet",
-			"Price"
+			"Price",
+			"Keyboard",
+			"RunData",
+			"ShopManager",
+			"SputnikZhuzhik",
+			"SputnikBunny",
+			"Sprite2",
+			"Мышь"
 		],
 		"subfolders": []
 	},

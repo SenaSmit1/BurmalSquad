@@ -1122,42 +1122,6 @@
 					}
 				},
 				{
-					"type": "Sputnik",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 21,
-					"sid": 347891893081457,
-					"tags": "",
-					"instanceVariables": {
-						"ShotSpeed": 2
-					},
-					"behaviors": {},
-					"materialSurfaceType": "smooth",
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 1842,
-						"y": 1952,
-						"width": 41.684431757383194,
-						"height": 53.68449544511471,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
 					"type": "sputnikBullet",
 					"properties": {
 						"initially-visible": true,
@@ -1191,6 +1155,108 @@
 						"y": 1451,
 						"width": 15.850697064988134,
 						"height": 15.664218275988274,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "SputnikZhuzhik",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 59,
+					"sid": 521277856324219,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"materialSurfaceType": "smooth",
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": -398,
+						"y": 10.912064120173454,
+						"width": 35.699999999999996,
+						"height": 47.949999999999996,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "SputnikBunny",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 21,
+					"sid": 856437017448892,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"materialSurfaceType": "smooth",
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": -335,
+						"y": 8,
+						"width": 42.699999999999996,
+						"height": 50.4,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Sprite2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 60,
+					"sid": 286222389594261,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"materialSurfaceType": "smooth",
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": -276.5145520390769,
+						"y": 10.991816072434759,
+						"width": 35.349999999999994,
+						"height": 43.4,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -2250,7 +2316,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"id": 0,
-						"price": 0
+						"price": 0,
+						"itemId": ""
 					},
 					"behaviors": {},
 					"materialSurfaceType": "smooth",
@@ -2384,6 +2451,42 @@
 						"z": 0,
 						"angle": 0
 					}
+				},
+				{
+					"type": "ShopManager",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 58,
+					"sid": 625064103415689,
+					"tags": "",
+					"instanceVariables": {
+						"CompanionIndex": 0
+					},
+					"behaviors": {},
+					"materialSurfaceType": "smooth",
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": -586,
+						"y": 1234,
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
 				}
 			],
 			"sid": 144714269064499,
@@ -2432,6 +2535,14 @@
 			"properties": {},
 			"uid": 51,
 			"sid": 364505158633168,
+			"tags": "",
+			"instanceVariables": {}
+		},
+		{
+			"type": "RunData",
+			"properties": {},
+			"uid": 57,
+			"sid": 608039353002618,
 			"tags": "",
 			"instanceVariables": {}
 		}

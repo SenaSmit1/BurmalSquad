@@ -15,7 +15,7 @@
 			"eventType": "variable",
 			"name": "GlobalCoins",
 			"type": "number",
-			"initialValue": "0",
+			"initialValue": "100",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -40,16 +40,6 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 804768505547415
-		},
-		{
-			"eventType": "variable",
-			"name": "IsSputnik",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 810873425665598
 		},
 		{
 			"eventType": "block",
@@ -140,14 +130,6 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "Sputnik",
-					"sid": 507386136767884,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-visible",
 					"objectClass": "ResultBg",
 					"sid": 116270216456026,
 					"parameters": {
@@ -161,6 +143,30 @@
 					"parameters": {
 						"visibility": "invisible"
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "SputnikZhuzhik",
+					"sid": 831501532883109,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "SputnikBunny",
+					"sid": 965243096766667,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Sprite2",
+					"sid": 723141281942901,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 657768115449599
@@ -171,30 +177,92 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 368285185857677
+					"sid": 860597761536094
 				},
 				{
-					"id": "compare-eventvar",
+					"id": "compare-two-values",
 					"objectClass": "System",
-					"sid": 461322514396234,
+					"sid": 938014253899073,
 					"parameters": {
-						"variable": "IsSputnik",
+						"first-value": "RunData.Get(\"zhuzhik\")",
 						"comparison": 0,
-						"value": "1"
+						"second-value": "1"
 					}
 				}
 			],
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "Sputnik",
-					"sid": 420766786774293,
+					"objectClass": "SputnikZhuzhik",
+					"sid": 239237645483719,
 					"parameters": {
 						"visibility": "visible"
 					}
 				}
 			],
-			"sid": 899101507390239
+			"sid": 282341540265460
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 296583755356778
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 246102447356551,
+					"parameters": {
+						"first-value": "RunData.Get(\"zaika\")",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "SputnikBunny",
+					"sid": 182645460146799,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 621760988027593
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 847574889428461
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 251087652474969,
+					"parameters": {
+						"first-value": "RunData.Get(\"tomato\")",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Sprite2",
+					"sid": 948674523794796,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 467060139995719
 		},
 		{
 			"eventType": "block",
@@ -240,12 +308,51 @@
 					}
 				},
 				{
-					"id": "set-position",
-					"objectClass": "Sputnik",
-					"sid": 718949365257242,
+					"id": "set-x",
+					"objectClass": "SputnikZhuzhik",
+					"sid": 651302200547881,
 					"parameters": {
-						"x": "Player.X - 52",
-						"y": "Player.Y + 22"
+						"x": "lerp(SputnikZhuzhik.X, Player.X + 50, 0.1)"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "SputnikZhuzhik",
+					"sid": 535946944989384,
+					"parameters": {
+						"y": "lerp(SputnikZhuzhik.Y, Player.Y + 65, 0.15)"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "SputnikBunny",
+					"sid": 594440313139475,
+					"parameters": {
+						"x": "lerp(SputnikBunny.X, Player.X - 60, 0.15)"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "SputnikBunny",
+					"sid": 511692178949278,
+					"parameters": {
+						"y": "lerp(SputnikBunny.Y, Player.Y + 50, 0.25)"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "Sprite2",
+					"sid": 324203318845033,
+					"parameters": {
+						"x": "lerp(Sprite2.X, Player.X - 50, 0.09)"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "Sprite2",
+					"sid": 587786317294950,
+					"parameters": {
+						"y": "lerp(Sprite2.Y, Player.Y - 50, 1.7)"
 					}
 				}
 			],
@@ -389,9 +496,9 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 494235529099444,
+					"sid": 838273377055665,
 					"parameters": {
-						"interval-seconds": "Sputnik.ShotSpeed"
+						"interval-seconds": "2"
 					}
 				},
 				{
@@ -428,20 +535,20 @@
 				},
 				{
 					"id": "is-visible",
-					"objectClass": "Sputnik",
-					"sid": 275907934351404
+					"objectClass": "SputnikZhuzhik",
+					"sid": 443426130985823
 				}
 			],
 			"actions": [
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 627618657204994,
+					"sid": 555949299921988,
 					"parameters": {
 						"object-to-create": "sputnikBullet",
 						"layer": "0",
-						"x": "Sputnik.X",
-						"y": "Sputnik.Y",
+						"x": "SputnikZhuzhik.X",
+						"y": "SputnikZhuzhik.Y",
 						"create-hierarchy": false,
 						"template-name": "\"\""
 					}
@@ -624,6 +731,15 @@
 					"sid": 835966186269027,
 					"parameters": {
 						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 907461408126511,
+					"parameters": {
+						"variable": "Initialize",
+						"value": "0"
 					}
 				}
 			],
@@ -832,6 +948,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-instvar-value",
+							"objectClass": "ShopManager",
+							"sid": 743624943134988,
+							"parameters": {
+								"instance-variable": "CompanionIndex",
+								"value": "floor(random(3))"
+							}
+						},
+						{
 							"id": "set-animation-frame",
 							"objectClass": "BuyButton",
 							"sid": 276910698623559,
@@ -866,18 +991,18 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "BuyButton",
-							"sid": 702595880096274,
+							"sid": 679821974670308,
 							"parameters": {
 								"instance-variable": "price",
-								"value": "PlayerData.Get(\"shop.\" & CurrentWave -1 & \".items.0.price\")"
+								"value": "GameData.Get(\"sputniki.\" & ShopManager.CompanionIndex & \".price\")"
 							}
 						},
 						{
 							"id": "set-animation-frame",
 							"objectClass": "ShopSlot",
-							"sid": 592475969646345,
+							"sid": 335021940812427,
 							"parameters": {
-								"frame-number": "PlayerData.Get(\"shop.\" & CurrentWave - 1 & \".items.0.animationFrame\")"
+								"frame-number": "GameData.Get(\"sputniki.\" & ShopManager.CompanionIndex & \".iconFrame\")"
 							}
 						},
 						{
@@ -886,6 +1011,15 @@
 							"sid": 707945213477505,
 							"parameters": {
 								"text": "BuyButton.price"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "BuyButton",
+							"sid": 440844511191376,
+							"parameters": {
+								"instance-variable": "itemId",
+								"value": "GameData.Get(\"sputniki.\" & ShopManager.CompanionIndex & \".id\")"
 							}
 						}
 					],
@@ -947,11 +1081,13 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-tap-object",
-					"objectClass": "Touch",
-					"sid": 459525224429734,
+					"id": "on-object-clicked",
+					"objectClass": "Мышь",
+					"sid": 175634138181078,
 					"parameters": {
-						"object": "BuyButton"
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BuyButton"
 					}
 				},
 				{
@@ -963,6 +1099,20 @@
 						"comparison": 5,
 						"second-value": "BuyButton.price"
 					}
+				},
+				{
+					"id": "compare-animation-frame",
+					"objectClass": "BuyButton",
+					"sid": 173035240621565,
+					"parameters": {
+						"comparison": 0,
+						"number": "0"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "BuyButton",
+					"sid": 381028109050891
 				}
 			],
 			"actions": [
@@ -973,15 +1123,6 @@
 					"parameters": {
 						"variable": "GlobalCoins",
 						"value": "BuyButton.price"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 379211217093200,
-					"parameters": {
-						"variable": "IsSputnik",
-						"value": "1"
 					}
 				},
 				{
@@ -999,6 +1140,15 @@
 					"parameters": {
 						"text": "\"Куплено\""
 					}
+				},
+				{
+					"id": "set-key",
+					"objectClass": "RunData",
+					"sid": 766399261301321,
+					"parameters": {
+						"key": "BuyButton.itemId",
+						"value": "1"
+					}
 				}
 			],
 			"sid": 553087253467088
@@ -1007,12 +1157,13 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
-					"objectClass": "Touch",
-					"sid": 854345745497819,
+					"id": "on-object-clicked",
+					"objectClass": "Мышь",
+					"sid": 569984880376788,
 					"parameters": {
-						"object": "ToMenuButton",
-						"type": "start"
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "ToMenuButton"
 					}
 				},
 				{
@@ -1045,12 +1196,13 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
-					"objectClass": "Touch",
-					"sid": 541503153086644,
+					"id": "on-object-clicked",
+					"objectClass": "Мышь",
+					"sid": 883252916649371,
 					"parameters": {
-						"object": "NextWaveButton",
-						"type": "start"
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "NextWaveButton"
 					}
 				},
 				{
@@ -1157,6 +1309,137 @@
 				}
 			],
 			"sid": 625332848304726
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 969564964891613,
+					"parameters": {
+						"key": 87
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 136790254128674,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "up"
+					}
+				}
+			],
+			"sid": 102341509538656
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 359999602882207,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 877789809726762,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "down"
+					}
+				}
+			],
+			"sid": 538939658585750
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 950331113751040,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 113702222375179,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 321547468628449
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 300357215290938,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 649680784815459,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 374815832935208
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 876713570036142
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 253640605055982,
+					"parameters": {
+						"first-value": "RunData.Get(\"zhuzhik\")",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "SputnikZhuzhik",
+					"sid": 988219725290403,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 748759627612328
 		}
 	],
 	"sid": 411087049602231
