@@ -139,13 +139,14 @@
 			"Sprite",
 			"ShopSlot",
 			"BuyButton",
-			"Sputnik",
 			"sputnikBullet",
 			"Price",
 			"Keyboard",
 			"RunData",
 			"ShopManager",
-			"SputnikZhuzhik"
+			"SputnikZhuzhik",
+			"SputnikBunny",
+			"Sprite2"
 		],
 		"subfolders": []
 	},

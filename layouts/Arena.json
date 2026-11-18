@@ -1122,42 +1122,6 @@
 					}
 				},
 				{
-					"type": "Sputnik",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 21,
-					"sid": 347891893081457,
-					"tags": "",
-					"instanceVariables": {
-						"ShotSpeed": 2
-					},
-					"behaviors": {},
-					"materialSurfaceType": "smooth",
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": -305,
-						"y": 45,
-						"width": 41.684431757383194,
-						"height": 53.68449544511471,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
 					"type": "sputnikBullet",
 					"properties": {
 						"initially-visible": true,
@@ -1222,9 +1186,77 @@
 					"locked": false,
 					"world": {
 						"x": -398,
-						"y": 51,
-						"width": 39.3692758757806,
-						"height": 52.878341127273934,
+						"y": 10.912064120173454,
+						"width": 35.699999999999996,
+						"height": 47.949999999999996,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "SputnikBunny",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 21,
+					"sid": 856437017448892,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"materialSurfaceType": "smooth",
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": -335,
+						"y": 8,
+						"width": 42.699999999999996,
+						"height": 50.4,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Sprite2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 60,
+					"sid": 286222389594261,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"materialSurfaceType": "smooth",
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": -276.5145520390769,
+						"y": 10.991816072434759,
+						"width": 35.349999999999994,
+						"height": 43.4,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

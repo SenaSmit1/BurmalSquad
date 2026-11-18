@@ -15,7 +15,7 @@
 			"eventType": "variable",
 			"name": "GlobalCoins",
 			"type": "number",
-			"initialValue": "1000",
+			"initialValue": "100",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -151,6 +151,22 @@
 					"parameters": {
 						"visibility": "invisible"
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "SputnikBunny",
+					"sid": 965243096766667,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Sprite2",
+					"sid": 723141281942901,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 657768115449599
@@ -185,6 +201,68 @@
 				}
 			],
 			"sid": 282341540265460
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 296583755356778
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 246102447356551,
+					"parameters": {
+						"first-value": "RunData.Get(\"zaika\")",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "SputnikBunny",
+					"sid": 182645460146799,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 621760988027593
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 847574889428461
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 251087652474969,
+					"parameters": {
+						"first-value": "RunData.Get(\"tomato\")",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Sprite2",
+					"sid": 948674523794796,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 467060139995719
 		},
 		{
 			"eventType": "block",
@@ -232,17 +310,49 @@
 				{
 					"id": "set-x",
 					"objectClass": "SputnikZhuzhik",
-					"sid": 829880755197369,
+					"sid": 651302200547881,
 					"parameters": {
-						"x": "lerp(SputnikZhuzhik.X, Player.X + 40, 0.05)"
+						"x": "lerp(SputnikZhuzhik.X, Player.X + 50, 0.1)"
 					}
 				},
 				{
 					"id": "set-y",
 					"objectClass": "SputnikZhuzhik",
-					"sid": 917653212573303,
+					"sid": 535946944989384,
 					"parameters": {
-						"y": "lerp(SputnikZhuzhik.Y, Player.Y + 40, 0.05)"
+						"y": "lerp(SputnikZhuzhik.Y, Player.Y + 65, 0.15)"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "SputnikBunny",
+					"sid": 594440313139475,
+					"parameters": {
+						"x": "lerp(SputnikBunny.X, Player.X - 60, 0.15)"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "SputnikBunny",
+					"sid": 511692178949278,
+					"parameters": {
+						"y": "lerp(SputnikBunny.Y, Player.Y + 50, 0.25)"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "Sprite2",
+					"sid": 324203318845033,
+					"parameters": {
+						"x": "lerp(Sprite2.X, Player.X - 50, 0.09)"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "Sprite2",
+					"sid": 587786317294950,
+					"parameters": {
+						"y": "lerp(Sprite2.Y, Player.Y - 50, 1.7)"
 					}
 				}
 			],
@@ -422,6 +532,11 @@
 						"comparison": 0,
 						"second-value": "0"
 					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "SputnikZhuzhik",
+					"sid": 443426130985823
 				}
 			],
 			"actions": [
@@ -1290,6 +1405,37 @@
 				}
 			],
 			"sid": 374815832935208
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 876713570036142
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 253640605055982,
+					"parameters": {
+						"first-value": "RunData.Get(\"zhuzhik\")",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "SputnikZhuzhik",
+					"sid": 988219725290403,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 748759627612328
 		}
 	],
 	"sid": 411087049602231
