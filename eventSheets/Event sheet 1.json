@@ -300,6 +300,14 @@
 					}
 				},
 				{
+					"id": "set-width",
+					"objectClass": "Lives",
+					"sid": 556947363944630,
+					"parameters": {
+						"width": "HP_BG.Width * ((Player.HP) / Player.HPMAX)"
+					}
+				},
+				{
 					"id": "set-text",
 					"objectClass": "Text2",
 					"sid": 811094206004933,
@@ -384,14 +392,6 @@
 					"id": "destroy",
 					"objectClass": "Enemy1",
 					"sid": 210015968298284
-				},
-				{
-					"id": "set-width",
-					"objectClass": "Lives",
-					"sid": 935240615338801,
-					"parameters": {
-						"width": "HP_BG.Width * ((Player.HP) / Player.HPMAX)"
-					}
 				}
 			],
 			"sid": 960217677433080
@@ -410,6 +410,16 @@
 					"sid": 618106220222731,
 					"parameters": {
 						"interval-seconds": "10"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 454381621473689,
+					"parameters": {
+						"first-value": "Player.HP",
+						"comparison": 2,
+						"second-value": "Player.HPMAX"
 					}
 				}
 			],
