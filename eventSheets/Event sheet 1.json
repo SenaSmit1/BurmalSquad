@@ -857,45 +857,16 @@
 							}
 						},
 						{
-							"id": "add-to-instvar",
+							"id": "set-instvar-value",
 							"objectClass": "SpawnManager",
-							"sid": 583576170031739,
+							"sid": 762203704308521,
 							"parameters": {
 								"instance-variable": "NextSide",
-								"value": "1"
+								"value": "floor(random(0, 13))"
 							}
 						}
 					],
-					"sid": 180658726744525,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 140772810776674,
-									"parameters": {
-										"first-value": "SpawnManager.NextSide",
-										"comparison": 0,
-										"second-value": "12"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "SpawnManager",
-									"sid": 336181407354396,
-									"parameters": {
-										"instance-variable": "NextSide",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 439456164263178
-						}
-					]
+					"sid": 180658726744525
 				}
 			]
 		},
