@@ -29,6 +29,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Словарь",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Json",
 			"name": "JSON",
 			"author": "Scirra",
@@ -37,7 +44,14 @@
 		{
 			"type": "plugin",
 			"id": "Keyboard",
-			"name": "Keyboard",
+			"name": "Клавиатура",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Мышь",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -136,7 +150,7 @@
 			"IntroText",
 			"PlayerData",
 			"SettingsBtn",
-			"Sprite",
+			"ExitBtn",
 			"ShopSlot",
 			"BuyButton",
 			"sputnikBullet",
@@ -146,7 +160,8 @@
 			"ShopManager",
 			"SputnikZhuzhik",
 			"SputnikBunny",
-			"Sprite2"
+			"Sprite2",
+			"Мышь"
 		],
 		"subfolders": []
 	},

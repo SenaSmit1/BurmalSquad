@@ -1081,11 +1081,13 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-tap-object",
-					"objectClass": "Touch",
-					"sid": 459525224429734,
+					"id": "on-object-clicked",
+					"objectClass": "Мышь",
+					"sid": 175634138181078,
 					"parameters": {
-						"object": "BuyButton"
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BuyButton"
 					}
 				},
 				{
@@ -1155,12 +1157,13 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
-					"objectClass": "Touch",
-					"sid": 854345745497819,
+					"id": "on-object-clicked",
+					"objectClass": "Мышь",
+					"sid": 569984880376788,
 					"parameters": {
-						"object": "ToMenuButton",
-						"type": "start"
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "ToMenuButton"
 					}
 				},
 				{
@@ -1193,12 +1196,13 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
-					"objectClass": "Touch",
-					"sid": 541503153086644,
+					"id": "on-object-clicked",
+					"objectClass": "Мышь",
+					"sid": 883252916649371,
 					"parameters": {
-						"object": "NextWaveButton",
-						"type": "start"
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "NextWaveButton"
 					}
 				},
 				{

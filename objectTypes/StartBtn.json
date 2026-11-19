@@ -29,16 +29,41 @@
 						"exportQuality": 0.8,
 						"fileType": "image/png",
 						"imageSpriteId": 4943544,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 715571467107200,
+				"name": "Idle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 514,
+						"height": 125,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 233915,
 						"collisionPoly": {
 							"points": [
-								0.14591009579955785,
 								0,
-								0.8953574060427414,
-								0.027842227378190254,
-								0.8540899042004422,
+								0,
 								1,
-								0.10464259395725865,
-								0.9721577726218097
+								0,
+								1,
+								0.996,
+								0,
+								1
 							]
 						},
 						"useCollisionPoly": true,
@@ -46,8 +71,8 @@
 						"tag": ""
 					}
 				],
-				"sid": 715571467107200,
-				"name": "Animation 1",
+				"sid": 280859943714531,
+				"name": "Hover",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

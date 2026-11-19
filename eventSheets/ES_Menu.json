@@ -133,12 +133,13 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
-					"objectClass": "Touch",
-					"sid": 716962116177157,
+					"id": "on-object-clicked",
+					"objectClass": "Мышь",
+					"sid": 505537807347638,
 					"parameters": {
-						"object": "StartBtn",
-						"type": "start"
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "StartBtn"
 					}
 				}
 			],
@@ -254,6 +255,147 @@
 				}
 			],
 			"sid": 712396001989223
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Мышь",
+					"sid": 805689143613627,
+					"parameters": {
+						"object": "SettingsBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "SettingsBtn",
+					"sid": 647462222791011,
+					"parameters": {
+						"animation": "\"Hover\"",
+						"from": "current-frame"
+					}
+				}
+			],
+			"sid": 392604100827363
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 514684493461542
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "SettingsBtn",
+					"sid": 357656043590264,
+					"parameters": {
+						"animation": "\"Idle\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 593394915940880
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Мышь",
+					"sid": 292145689103152,
+					"parameters": {
+						"object": "ExitBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "ExitBtn",
+					"sid": 489968037084720,
+					"parameters": {
+						"animation": "\"Hover\"",
+						"from": "current-frame"
+					}
+				}
+			],
+			"sid": 392968765042961
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 676876742478816
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "ExitBtn",
+					"sid": 800184282086526,
+					"parameters": {
+						"animation": "\"Idle\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 250841043973523
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Мышь",
+					"sid": 359448937523872,
+					"parameters": {
+						"object": "StartBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "StartBtn",
+					"sid": 813493600553792,
+					"parameters": {
+						"animation": "\"Hover\"",
+						"from": "current-frame"
+					}
+				}
+			],
+			"sid": 587360104281095
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 993880022637954
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "StartBtn",
+					"sid": 861127028534109,
+					"parameters": {
+						"animation": "\"Idle\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 911366960487209
 		}
 	],
 	"sid": 941710272311924
