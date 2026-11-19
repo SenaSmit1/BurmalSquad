@@ -53,9 +53,10 @@
 					"sid": 982989543120346,
 					"tags": "",
 					"instanceVariables": {
-						"Lives": 3,
+						"HP": 5,
 						"KilledEnemies": 0,
-						"ShotSpeed": 1
+						"ShotSpeed": 1,
+						"HPMAX": 5
 					},
 					"behaviors": {
 						"8Direction": {
@@ -177,10 +178,10 @@
 					"world": {
 						"x": -1000000000,
 						"y": 1192,
-						"width": 75,
-						"height": 75,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 53.37078651685394,
+						"height": 48.6328125,
+						"originX": 0.5289473684210526,
+						"originY": 0.4036144578313253,
 						"color": [
 							1,
 							1,
@@ -1306,6 +1307,40 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "HP_BG",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 62,
+					"sid": 779053061950195,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"materialSurfaceType": "smooth",
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 158,
+						"y": 100,
+						"width": 237,
+						"height": 57.5,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
 					"type": "Lives",
 					"properties": {
 						"initially-visible": true,
@@ -1354,12 +1389,12 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 158,
-						"y": 90,
-						"width": 228.12374187325165,
-						"height": 68.92595915170386,
-						"originX": 0.5,
-						"originY": 0.5,
+						"x": 41,
+						"y": 100,
+						"width": 237,
+						"height": 57.5,
+						"originX": 0,
+						"originY": 0.4956521739130435,
 						"color": [
 							1,
 							1,
@@ -2160,8 +2195,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 993,
-						"y": 518,
+						"x": 923,
+						"y": 538,
 						"width": 2141,
 						"height": 1158,
 						"originX": 0.5,
@@ -2221,8 +2256,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 17,
-						"y": -19,
+						"x": -3,
+						"y": 1,
 						"width": 1904,
 						"height": 1097,
 						"originX": 0,
@@ -2478,6 +2513,56 @@
 						"height": 250,
 						"originX": 0.5,
 						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "HP_TEXT",
+					"properties": {
+						"text": "5/5",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 20,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 64,
+					"sid": 158363290511978,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"materialSurfaceType": "smooth",
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 45.26492881774902,
+						"y": 71.72549017128927,
+						"width": 226.9156217397197,
+						"height": 55.93522686801398,
+						"originX": 0,
+						"originY": 0,
 						"color": [
 							1,
 							1,

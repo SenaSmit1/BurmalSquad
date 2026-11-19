@@ -275,20 +275,20 @@
 			],
 			"actions": [
 				{
+					"id": "set-text",
+					"objectClass": "HP_TEXT",
+					"sid": 224786359010173,
+					"parameters": {
+						"text": "Player.HP & \"/\" & Player.HPMAX"
+					}
+				},
+				{
 					"id": "set-angle-of-motion",
 					"objectClass": "Enemy1",
 					"sid": 210567514456529,
 					"behaviorType": "Bullet",
 					"parameters": {
 						"angle": "angle(Enemy1.X, Enemy1.Y, Player.X, Player.Y)"
-					}
-				},
-				{
-					"id": "set-animation-frame",
-					"objectClass": "Lives",
-					"sid": 934029561615042,
-					"parameters": {
-						"frame-number": "Player.Lives"
 					}
 				},
 				{
@@ -376,20 +376,55 @@
 					"objectClass": "Player",
 					"sid": 321043081856295,
 					"parameters": {
-						"instance-variable": "Lives",
+						"instance-variable": "HP",
 						"value": "1"
 					}
 				},
 				{
-					"id": "set-visible",
+					"id": "destroy",
 					"objectClass": "Enemy1",
-					"sid": 764450303649926,
+					"sid": 210015968298284
+				},
+				{
+					"id": "set-width",
+					"objectClass": "Lives",
+					"sid": 935240615338801,
 					"parameters": {
-						"visibility": "invisible"
+						"width": "HP_BG.Width * ((Player.HP) / Player.HPMAX)"
 					}
 				}
 			],
 			"sid": 960217677433080
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-visible",
+					"objectClass": "SputnikBunny",
+					"sid": 948110968421825
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 618106220222731,
+					"parameters": {
+						"interval-seconds": "10"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Player",
+					"sid": 751494406898151,
+					"parameters": {
+						"instance-variable": "HP",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 849269798212666
 		},
 		{
 			"eventType": "block",
@@ -561,6 +596,15 @@
 					"parameters": {
 						"angle": "angle(SputnikBullet.X, SputnikBullet.Y, enemy1.X, enemy1.Y)"
 					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Enemy1",
+					"sid": 982253602987131,
+					"parameters": {
+						"instance-variable": "Targeted",
+						"value": "true"
+					}
 				}
 			],
 			"sid": 858260842177471
@@ -692,7 +736,7 @@
 					"objectClass": "System",
 					"sid": 901087080891643,
 					"parameters": {
-						"first-value": "Player.Lives",
+						"first-value": "Player.HP",
 						"comparison": 0,
 						"second-value": "0"
 					}
@@ -741,6 +785,11 @@
 						"variable": "Initialize",
 						"value": "0"
 					}
+				},
+				{
+					"id": "clear",
+					"objectClass": "RunData",
+					"sid": 649336833019640
 				}
 			],
 			"sid": 205400284107853
@@ -948,13 +997,51 @@
 					],
 					"actions": [
 						{
-							"id": "set-instvar-value",
-							"objectClass": "ShopManager",
-							"sid": 743624943134988,
-							"parameters": {
-								"instance-variable": "CompanionIndex",
-								"value": "floor(random(3))"
-							}
+							"type": "script",
+							"language": "javascript",
+							"script": [
+								"const runData = runtime.objects.RunData.getFirstInstance();",
+								"const shopManager = runtime.objects.ShopManager.getFirstInstance();",
+								"",
+								"// Ключи в RunData, соответствующие индексам спутников",
+								"const companionKeys = [",
+								"    \"zhuzhik\",",
+								"    \"zaika\",",
+								"    \"tomato\"",
+								"];",
+								"",
+								"// Получаем хранилище Dictionary",
+								"const data = runData.getDataMap();",
+								"",
+								"// Формируем список доступных индексов",
+								"const availableIndexes = [];",
+								"",
+								"for (let i = 0; i < companionKeys.length; i++) {",
+								"    const key = companionKeys[i];",
+								"",
+								"    if (data.get(key) === 0) {",
+								"        availableIndexes.push(i);",
+								"    }",
+								"}",
+								"",
+								"// Если свободных спутников нет",
+								"if (availableIndexes.length === 0) {",
+								"    shopManager.instVars.CompanionIndex = -1;",
+								"    console.log(\"No available companions\");",
+								"} else {",
+								"    // Выбираем случайный доступный индекс",
+								"    const randomPosition = Math.floor(",
+								"        Math.random() * availableIndexes.length",
+								"    );",
+								"",
+								"    const selectedIndex = availableIndexes[randomPosition];",
+								"",
+								"    // Записываем результат в ShopManager",
+								"    shopManager.instVars.CompanionIndex = selectedIndex;",
+								"",
+								"    console.log(\"Selected companion:\", selectedIndex);",
+								"}"
+							]
 						},
 						{
 							"id": "set-animation-frame",
@@ -1409,37 +1496,6 @@
 				}
 			],
 			"sid": 374815832935208
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 876713570036142
-				},
-				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 253640605055982,
-					"parameters": {
-						"first-value": "RunData.Get(\"zhuzhik\")",
-						"comparison": 0,
-						"second-value": "1"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "SputnikZhuzhik",
-					"sid": 988219725290403,
-					"parameters": {
-						"visibility": "visible"
-					}
-				}
-			],
-			"sid": 748759627612328
 		}
 	],
 	"sid": 411087049602231

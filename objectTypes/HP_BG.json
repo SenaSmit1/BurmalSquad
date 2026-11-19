@@ -1,0 +1,56 @@
+{
+	"name": "HP_BG",
+	"plugin-id": "Sprite",
+	"sid": 280151382616206,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 474,
+						"height": 115,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3079413,
+						"collisionPoly": {
+							"points": [
+								0.10126582278481013,
+								0,
+								0.9324894514767933,
+								0.043478260869565216,
+								0.9430379746835443,
+								0.9304347826086956,
+								0.8987341772151899,
+								1,
+								0.06751054852320675,
+								0.9565217391304348,
+								0.056962025316455694,
+								0.06956521739130435
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 205668734269234,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
